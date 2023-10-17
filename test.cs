@@ -22,6 +22,7 @@
 // 645 -> 5
 // 78 -> третьей цифры нет
 // 32679 -> 6
+Console.WriteLine("Введите трехначное число");
 int number = Convert.ToInt32(Console.ReadLine());
 if (number / 10 % 10 < 1) {
 Console.WriteLine($"{number} -> третьей цифры нет");
