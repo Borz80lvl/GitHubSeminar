@@ -27,5 +27,5 @@ if (number / 10 % 10 < 1) {
 Console.WriteLine("{number} -> третьей цифры нет");
 }
 else {
-Console.WriteLine($"{number} -> {Math.Round(number / 10 % 10)}")
+Console.WriteLine($"{number} -> {Math.Round(number / 10 % 10)}");
 }
