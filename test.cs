@@ -24,7 +24,7 @@
 // 32679 -> 6
 int number = Convert.ToInt32(Console.ReadLine());
 if (number / 10 % 10 < 1) {
-Console.WriteLine("{number} -> третьей цифры нет");
+Console.WriteLine($"{number} -> третьей цифры нет");
 }
 else {
 Console.WriteLine($"{number} -> {Math.Round(Convert.ToDouble(number / 10 % 10))}");
