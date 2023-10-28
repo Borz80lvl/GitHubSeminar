@@ -1,11 +1,27 @@
-Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
-3, 5 -> 243 (3⁵)
-2, 4 -> 16
-Console.WriteLine("Напишите число,которое будет возводиться в степень: ");
-int A = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Напишите степень: ");
-int B = Convert.ToInt32(Console.ReadLine());
-Console.Write($"{A},{B} -> {Math.Pow(A, B)}");
+// Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+// 0, 7, 8, -2, -2 -> 2
+// 1, -7, 567, 89, 223-> 3
+// Console.WriteLine("Введите число");
+// int number = Convert.ToInt32(Console.ReadLine());
+// int[] Array = number.ToString().ToCharArray().Select(c => int.Parse(c.ToString())).ToArray();
+// int sum = 0;
+// for (int i = 0; i < Array.Length; i++)
+// {
+//     if (Array[i] == 0 || Array[i] > 0) 
+//     {
+//       sum = sum + 1;
+//     }
+// }
+// for (int i = 0; i < Array.Length; i++)
+// {
+//     Console.Write(Array[i]);
+//     if (i < Array.Length - 1)
+//             {
+//                 Console.Write(", ");
+//             }
+// }
+// Console.Write($" -> {sum}");
+
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
