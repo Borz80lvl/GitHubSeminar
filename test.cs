@@ -1,28 +1,20 @@
-Console.WriteLine("Напишите число,которое будет возводиться в степень: ");
-int A = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Напишите степень: ");
-int B = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine(Math.Pow(A, B));
+// Console.WriteLine("Напишите число,которое будет возводиться в степень: ");
+// int A = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Напишите степень: ");
+// int B = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine(Math.Pow(A, B));
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-//Задача 2
-// Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет.
-// 645 -> 5
-// 78 -> третьей цифры нет
-// 32679 -> 6
-// Console.WriteLine("Введите трехначное число");
-// int number = Convert.ToInt32(Console.ReadLine());
-// if (number < 100) {
-// Console.WriteLine($"{number} -> третьей цифры нет");
-// }
-// else {
-// Console.WriteLine($"{number} -> {Math.Round(Convert.ToDouble(number / 10 % 10))}");
-// }
-
+Console.WriteLine("Введите число");
+int number = Convert.ToInt32(Console.ReadLine());
+int[] Array = number.ToString().ToCharArray().Select(c => int.Parse(c.ToString())).ToArray();
+int sum = 0;
+for (int i = 0; i < Array.Length; i++)
+{
+    sum = sum + Array[i];
+}
+Console.WriteLine(sum);
 
  
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
