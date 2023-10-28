@@ -1,11 +1,8 @@
-// Напишите программу, которая принимает на вход трёхзначное число и на выходе показывает вторую цифру этого числа.
-// 456 -> 5
-// 782 -> 8
-// 918 -> 1
-Console.WriteLine("Введите трехначное число");
-int number = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine($"{number} -> {number / 10 % 10}");
-
+Console.WriteLine("Напишите число,которое будет возводиться в степень: ");
+int A = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Напишите степень: ");
+int B = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine(Math.Pow(A, B));
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
