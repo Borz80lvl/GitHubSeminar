@@ -33,6 +33,38 @@
 // Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
 // M = 1; N = 15 -> 120
 // M = 4; N = 8. -> 30
+// using System;
+// class Program {
+//     static void Main () 
+// {
+//     Console.WriteLine("Введите число M и N:");
+//     int M = Convert.ToInt32(Console.ReadLine());
+//     int N = Convert.ToInt32(Console.ReadLine());    
+//     Console.Write($"M = {M};N = {N} -> ");
+//     Console.WriteLine(Akkerman(M, N));
+// }
+
+// static int Akkerman(int M, int N)
+// {
+//     if (M > N)
+//     {
+//         return 0;
+//     }
+//     else 
+//     {
+//         return M + Akkerman(M + 1,N);
+//     }
+// }
+// }
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
+// m = 2, n = 3 -> A(m,n) = 9
+// m = 3, n = 2 -> A(m,n) = 29
 using System;
 class Program {
     static void Main () 
@@ -41,18 +73,26 @@ class Program {
     int M = Convert.ToInt32(Console.ReadLine());
     int N = Convert.ToInt32(Console.ReadLine());    
     Console.Write($"M = {M};N = {N} -> ");
-    Console.WriteLine(SumOfMandN(M, N));
+    Console.WriteLine(Akkerman(M, N));
 }
 
-static int SumOfMandN(int M, int N)
+static int Akkerman(int M, int N)
 {
-    if (M > N)
+    if (M == 0)
+    {
+        return N + 1;
+    }
+    if (M > 0 && N == 0) 
+    {
+        return Akkerman(M - 1,1);
+    } 
+    if (M > 0 && N > 0)
+    {
+        return Akkerman(M - 1,Akkerman(M,N - 1));
+    }
+    else
     {
         return 0;
-    }
-    else 
-    {
-        return M + SumOfMandN(M + 1,N);
     }
 }
 }
