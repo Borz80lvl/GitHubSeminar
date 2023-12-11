@@ -1,54 +1,58 @@
-// Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
-// 0, 7, 8, -2, -2 -> 2
-// 1, -7, 567, 89, 223 -> 3
-
-Console.WriteLine("Введите число:");
-int number = Convert.ToInt32(Console.ReadLine());
-int[] Array = number.ToString().ToCharArray().Select(c => int.Parse(c.ToString())).ToArray();
-int sum = 0;
-for (int i = 0; i < Array.Length; i++)
-{
-    if (Array[i] == 0 || Array[i] > 0) 
-    {
-      sum++;
-    }
-}
-
-for (int i = 0; i < Array.Length; i++)
-{
-    Console.Write(Array[i]);
-    if (i < Array.Length - 1)
-    {
-      Console.Write(", ");
-    }
-}
-
-Console.Write($" -> {sum}");
-
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-// Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2;
-//  значения b1, k1, b2 и k2 задаются пользователем.
-
-// b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
-
-// Console.WriteLine("Введите числа для нахождения точки пересечения двух прямых");
-
-// double 
-// b1 = Convert.ToDouble(Console.ReadLine()),
-// b2 = Convert.ToDouble(Console.ReadLine()),
-// k1 = Convert.ToDouble(Console.ReadLine()),
-// k2 = Convert.ToDouble(Console.ReadLine());
-
-// void FindIntersectionPoint(double b1,double b2,double k1,double k2)
+// Задайте значение N. Напишите программу, которая выведет все натуральные числа в промежутке от N до 1. Выполнить с помощью рекурсии.
+// N = 5 -> "5, 4, 3, 2, 1"
+// N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
+// using System;
+// class Program {
+//     static void Main () 
 // {
-// double x = (b2 - b1) / (k1 - k2);
-// double y = k1 * x + b1;
-// double[] points = new double[] {x,y};
-// Console.WriteLine($"b1 -> {b1}, b2 -> {b2}, k1 -> {k1}, k2 -> {k2} -> ({points[0]}; {points[1]})");
+//     Console.WriteLine("Введите число N:");
+//     int n = Convert.ToInt32(Console.ReadLine());
+//     Console.Write($"N = {n} -> ");
+//     FromNtoOne(n);
 // }
-// FindIntersectionPoint(b1, b2, k1, k2);
+
+// static void FromNtoOne(int n)
+// {
+//     if (n > 1)
+//     {
+//         Console.Write($"{n}, ");
+//         FromNtoOne(n - 1);
+//     }
+//     else 
+//     {
+//         Console.Write(1);
+//     }
+// }
+// }
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
+// M = 1; N = 15 -> 120
+// M = 4; N = 8. -> 30
+using System;
+class Program {
+    static void Main () 
+{
+    Console.WriteLine("Введите число M и N:");
+    int M = Convert.ToInt32(Console.ReadLine());
+    int N = Convert.ToInt32(Console.ReadLine());    
+    Console.Write($"M = {M};N = {N} -> ");
+    Console.WriteLine(SumOfMandN(M, N));
+}
+
+static int SumOfMandN(int M, int N)
+{
+    if (M > N)
+    {
+        return 0;
+    }
+    else 
+    {
+        return M + SumOfMandN(M + 1,N);
+    }
+}
+}
